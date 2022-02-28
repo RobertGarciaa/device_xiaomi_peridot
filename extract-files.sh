@@ -75,6 +75,10 @@ function blob_fixup() {
 	    [ "$2" = "" ] && return 0
             sed -i "s/\/odm\/bin\//\/vendor\/bin\//g" "${2}"
             ;;
+        vendor/lib64/libqcrilNrVoiceModule.so)
+	    [ "$2" = "" ] && return 0
+            sed -i "s/REDIR_PARTY_NUM_SUPPORT value to true/REDIR_PARTY_NUM_SUPPORT value to false/" "${2}"
+            ;;
         *)
             return 1
             ;;
